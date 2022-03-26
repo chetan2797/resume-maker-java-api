@@ -1,6 +1,9 @@
 package com.resume.resumemakerapi.service;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 
 import com.itextpdf.html2pdf.HtmlConverter;
@@ -316,10 +319,14 @@ public class ResumeService {
         return sb;
     }
     
-    public synchronized ResponseHelper resume1(AllModel model) {
-        String sb = new String(this.getResumeData1(model));
+    public ResponseHelper resume1(AllModel model) {
+        InputStream is = new ByteArrayInputStream(String.valueOf(this.getResumeData1(model)).getBytes());
         ByteArrayOutputStream os = new ByteArrayOutputStream();  
-        HtmlConverter.convertToPdf(sb, os);
+        try {
+            HtmlConverter.convertToPdf(is, os);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         byte[] content = os.toByteArray();
         ResponseHelper rh = new ResponseHelper();
         rh.setStatus(200);
