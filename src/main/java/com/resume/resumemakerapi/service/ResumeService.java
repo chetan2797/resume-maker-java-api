@@ -321,6 +321,12 @@ public class ResumeService {
     
     public ResponseHelper resume1(AllModel model) {
         InputStream is = new ByteArrayInputStream(String.valueOf(this.getResumeData1(model)).getBytes());
+        try {
+            System.out.println(is.available());
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
         ByteArrayOutputStream os = new ByteArrayOutputStream();  
         try {
             HtmlConverter.convertToPdf(is, os);
