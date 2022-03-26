@@ -318,6 +318,7 @@ public class ResumeService {
     
     public ResponseHelper resume1(AllModel model) {
         String sb = new String(this.getResumeData1(model));
+        System.out.println(sb);
         ByteArrayOutputStream os = new ByteArrayOutputStream();  
         HtmlConverter.convertToPdf(sb, os);
         byte[] content = os.toByteArray();
