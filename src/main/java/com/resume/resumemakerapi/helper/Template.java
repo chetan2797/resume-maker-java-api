@@ -15,7 +15,9 @@ public class Template {
         try {
             System.out.println("1");
             InputStream resourceAsStream = ResumeMakerApiApplication.class.getClassLoader().getResourceAsStream("head-data.html");
-            HEAD = new String(resourceAsStream.readAllBytes());
+            byte[] ba = new byte[resourceAsStream.available()];
+            resourceAsStream.read(ba);
+            HEAD = new String(ba);
             System.out.println("2");
             HEAD = new String(Files.readAllBytes(java.nio.file.Paths.get(new ClassPathResource("static").getFile().getAbsolutePath()+File.separator+"head-data.html")));
             System.out.println("3");
