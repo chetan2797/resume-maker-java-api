@@ -2,7 +2,10 @@ package com.resume.resumemakerapi.helper;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
+
+import com.resume.resumemakerapi.ResumeMakerApiApplication;
 
 import org.springframework.core.io.ClassPathResource;
 
@@ -10,7 +13,12 @@ public class Template {
 
     static {
         try {
+            System.out.println("1");
+            InputStream resourceAsStream = ResumeMakerApiApplication.class.getClassLoader().getResourceAsStream("head-data.html");
+            HEAD = new String(resourceAsStream.readAllBytes());
+            System.out.println("2");
             HEAD = new String(Files.readAllBytes(java.nio.file.Paths.get(new ClassPathResource("static").getFile().getAbsolutePath()+File.separator+"head-data.html")));
+            System.out.println("3");
         } catch (IOException e) {
             e.printStackTrace();
         }
