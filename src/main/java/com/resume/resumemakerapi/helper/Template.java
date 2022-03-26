@@ -14,7 +14,7 @@ public class Template {
     static {
         try {
             System.out.println("1");
-            InputStream resourceAsStream = ResumeMakerApiApplication.class.getClassLoader().getResourceAsStream("head-data.html");
+            InputStream resourceAsStream = ResumeMakerApiApplication.class.getClassLoader().getResourceAsStream("static/head-data.html");
             byte[] ba = new byte[resourceAsStream.available()];
             resourceAsStream.read(ba);
             HEAD = new String(ba);
