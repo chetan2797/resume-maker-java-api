@@ -320,16 +320,11 @@ public class ResumeService {
     }
     
     public ResponseHelper resume1(AllModel model) {
-        InputStream is = new ByteArrayInputStream(String.valueOf(this.getResumeData1(model)).getBytes());
-        try {
-            System.out.println(is.available());
-        } catch (IOException e1) {
-            // TODO Auto-generated catch block
-            e1.printStackTrace();
-        }
+        // String sb = new String(this.getResumeData1(model));
         ByteArrayOutputStream os = new ByteArrayOutputStream();  
+        InputStream io = new ByteArrayInputStream(this.getResumeData1(model).toString().getBytes());
         try {
-            HtmlConverter.convertToPdf(is, os);
+            HtmlConverter.convertToPdf(io, os);
         } catch (IOException e) {
             e.printStackTrace();
         }
