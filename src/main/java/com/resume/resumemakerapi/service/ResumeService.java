@@ -125,7 +125,7 @@ public class ResumeService {
         sb.append(Template.BODY);
         sb.append("<div class='cover'><h1 class='name-tag'>"+model.getBasicDetails().getName()+"</h1><img class='photo' src='"+model.getProfilePic()+"' alt='my photo'></div>");
         sb.append("<div class='line'></div>");
-        sb.append("<table style='width:100%'><tr valign='top'><td class='mt-5 pt-2'><div class='line m-0'></div><h4 class='mt-3 mb-2'>GET IN TOUCH</h4>");
+        sb.append("<table style='width:100%'><tr valign='top'><td class='mt-5 pt-2' style='width:42%'><div class='line m-0'></div><h4 class='mt-3 mb-2'>GET IN TOUCH</h4>");
         if(model.getBasicDetails().getMobile()!=null && model.getBasicDetails().getMobile().trim()!="")
             sb.append("<label class='contact'><span class='contact-link'>Mobile:</span> <span><a class='link' href='tel:"+model.getBasicDetails().getMobile()+"'> "+model.getBasicDetails().getMobile()+"</a></span></label>");
         if(model.getBasicDetails().getEmail()!=null && model.getBasicDetails().getEmail().trim()!="")
@@ -165,7 +165,7 @@ public class ResumeService {
             sb.append("</ul></div>");
         }
         sb.append("</td>");
-        sb.append("<td class='mt-3'><label class='heading'>career objective</label><p class='content'>"+model.getBasicDetails().getCareerObjective()+"</p>");
+        sb.append("<td class='mt-3' style='width:58%'><label class='heading'>career objective</label><p class='content'>"+model.getBasicDetails().getCareerObjective()+"</p>");
         if((model.getEducationSchools()!=null && model.getEducationSchools().size()>0) || (model.getEducationColleges()!=null && model.getEducationColleges().size()>0)){
             sb.append("<div><label class='education'>Education</label>");
             model.getEducationColleges().forEach(a->{
@@ -224,7 +224,7 @@ public class ResumeService {
         sb.append(Template.HEAD);
         sb.append(Template.BODY);
         sb.append("<div class='resume3-cover'><h1 class='name-tag'>"+model.getBasicDetails().getName()+"</h1><img class='resume3-photo' [src]='imagePath' alt='my photo'></div>");
-        sb.append("<table style='width:100%'><tr valign='top'><td class='mt-5 pt-2'><div class='line m-0'></div><h4 class='color-custom-green mt-3 mb-2'>GET IN TOUCH!</h4>");
+        sb.append("<table style='width:100%'><tr valign='top'><td class='mt-5 pt-2' style='width:42%'><div class='line m-0'></div><h4 class='color-custom-green mt-3 mb-2'>GET IN TOUCH!</h4>");
         if(model.getBasicDetails().getMobile()!=null && model.getBasicDetails().getMobile().trim()!="")
             sb.append("<label class='contact'><span class='font-weigth-500'>Mobile:</span> <span><a class='link' href='tel:"+model.getBasicDetails().getMobile()+"'> "+model.getBasicDetails().getMobile()+"</a></span></label>");
         if(model.getBasicDetails().getEmail()!=null && model.getBasicDetails().getEmail().trim()!="")
@@ -266,7 +266,7 @@ public class ResumeService {
             sb.append("</ul></div>");
         }
         sb.append("</td>");
-        sb.append("<td class='mt-3'><label class='resume3-heading'>career objective</label><p class='content'>"+model.getBasicDetails().getCareerObjective()+"</p>");
+        sb.append("<td class='mt-3' style='width:58%'><label class='resume3-heading'>career objective</label><p class='content'>"+model.getBasicDetails().getCareerObjective()+"</p>");
         if((model.getEducationSchools()!=null && model.getEducationSchools().size()>0) || (model.getEducationColleges()!=null && model.getEducationColleges().size()>0)){
             sb.append("<div><label class='resume3-education'>Education</label>");
             model.getEducationColleges().forEach(a->{
