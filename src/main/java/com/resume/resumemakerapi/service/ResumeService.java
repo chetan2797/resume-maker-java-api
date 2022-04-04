@@ -19,7 +19,7 @@ public class ResumeService {
     private StringBuilder getResumeData1(AllModel model){ 
         StringBuilder sb = new StringBuilder("");
         sb.append(Template.TOP);
-        //sb.append(Template.HEAD);
+        sb.append(Template.HEAD);
         sb.append(Template.BODY);
         sb.append("<table style='width:100%'><tr valign='top'><td class='pt-2' style='width:42%'><div class='text-center mb-2'>");
         sb.append("<img class='resume1-photo' src='"+model.getProfilePic()+"' alt='my photo'>");
