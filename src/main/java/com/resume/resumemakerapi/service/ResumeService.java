@@ -336,9 +336,14 @@ public class ResumeService {
     }
     
     public ResponseHelper resume2(AllModel model) {
-        String sb = new String(this.getResumeData2(model));
+       // String sb = new String(this.getResumeData2(model));
         ByteArrayOutputStream os = new ByteArrayOutputStream();  
-        HtmlConverter.convertToPdf(sb, os);
+        InputStream io = new ByteArrayInputStream(this.getResumeData2(model).toString().getBytes());
+        try {
+            HtmlConverter.convertToPdf(io, os);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         byte[] content = os.toByteArray();
         ResponseHelper rh = new ResponseHelper();
         rh.setStatus(200);
@@ -347,9 +352,14 @@ public class ResumeService {
     }
 
     public ResponseHelper resume3(AllModel model) {
-        String sb = new String(this.getResumeData3(model));
+        // String sb = new String(this.getResumeData3(model));
         ByteArrayOutputStream os = new ByteArrayOutputStream();  
-        HtmlConverter.convertToPdf(sb, os);
+        InputStream io = new ByteArrayInputStream(this.getResumeData3(model).toString().getBytes());
+        try {
+            HtmlConverter.convertToPdf(io, os);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         byte[] content = os.toByteArray();
         ResponseHelper rh = new ResponseHelper();
         rh.setStatus(200);
