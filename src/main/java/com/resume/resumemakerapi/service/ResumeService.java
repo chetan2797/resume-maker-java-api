@@ -16,8 +16,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class ResumeService {
 
-    private StringBuilder getResumeData1(AllModel model){ 
-        StringBuilder sb = new StringBuilder("");
+    private StringBuffer getResumeData1(AllModel model){ 
+        StringBuffer sb = new StringBuffer("");
         sb.append(Template.TOP);
         sb.append(Template.HEAD);
         sb.append(Template.BODY);
