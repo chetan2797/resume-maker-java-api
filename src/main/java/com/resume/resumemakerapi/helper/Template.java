@@ -10,12 +10,10 @@ public class Template {
 
     static {
         try {
-            System.out.println("1");
             InputStream resourceAsStream = ResumeMakerApiApplication.class.getClassLoader().getResourceAsStream("static/head-data.html");
             byte[] ba = new byte[resourceAsStream.available()];
             resourceAsStream.read(ba);
             HEAD = new String(ba);
-            System.out.println("2");
         } catch (IOException e) {
             e.printStackTrace();
         }
